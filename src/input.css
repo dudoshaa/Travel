@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import url(../style.css);
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: all;
@@ -58,86 +57,80 @@ main {
 }
 
 @layer components {
-  .align-elements {
-    @apply max-w-6xl px-4 mx-auto;
+  @layer components {
+    .align-elements {
+      @apply px-2 sm:px-4 md:px-6 max-w-full sm:max-w-3xl md:max-w-4xl lg:max-w-6xl mx-auto;
+    }
+  
+    .logo-family {
+      font-family: "Lobster";
+      font-weight: 300;
+    }
+  
+    .argentina-bg,
+    .greece-bg,
+    .thailand-bg,
+    .norway-bg {
+      @apply border-[3px] border-white bg-no-repeat bg-cover bg-center;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    }
+  
+    .argentina-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../images/argentina.jpg);
+    }
+  
+    .greece-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../images/greece.jpg);
+    }
+  
+    .thailand-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../images/thailand.avif);
+    }
+  
+    .norway-bg {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+        url(../images/norway.jpg);
+    }
+  
+    .travel-bg {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
+        url(../images/travel-bg.jpg);
+      @apply bg-no-repeat bg-cover bg-center;
+    }
+  
+    .btn-text {
+      @apply flex justify-center font-medium uppercase text-base sm:text-lg md:text-xl lg:text-2xl transition-all hover:text-black;
+    }
+  
+    .card-wrapper {
+      @apply w-[140px] h-[200px] sm:w-[160px] sm:h-[240px] md:w-[200px] md:h-[300px] rounded-2xl;
+    }
+  
+    .hidden {
+      display: none;
+    }
+  
+    .mo {
+      @apply fixed bg-[#4a320b] rounded-xl w-full max-w-[90%] sm:max-w-[500px] md:max-w-[600px] p-4 sm:p-6 md:p-8 z-[100];
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    .overlay {
+      @apply fixed top-0 bottom-0 left-0 w-full bg-black bg-opacity-40 backdrop-blur-sm z-[99];
+    }
+  
+    .title {
+      @apply text-xl sm:text-2xl md:text-3xl font-bold;
+    }
+  
+    .modal-btn {
+      @apply flex items-center justify-between mb-4;
+    }
   }
-  .logo-family {
-    font-family: "Lobster";
-    font-weight: 300;
-  }
-  .argentina-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(../images/argentina.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border: 3px solid #fff;
-  }
-  .greece-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(../images/greece.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border: 3px solid #fff;
-  }
-  .thailand-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(../images/thailand.avif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border: 3px solid #fff;
-  }
-  .norway-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-      url(../images/norway.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border: 3px solid #fff;
-  }
-  .travel-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)),
-      url(../images/travel-bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-  }
-  .btn-text {
-    @apply flex font-medium  pt-30 justify-center text-3xl uppercase hover:text-black  transition-all;
-  }
-  .card-wrapper {
-    @apply w-[200px] h-[300px] rounded-2xl;
-  }
-  .hidden {
-    display: none;
-  }
-  .mo {
-    position: fixed;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    background-color: rgb(74, 50, 11);
-    border-radius: 15px;
-    width: 100%;
-    max-width: 600px;
-    padding: 30px;
-    z-index: 100;
-  }
-  .overlay {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
-  }
-  .title {
-    @apply text-2xl font-bold;
-  }
-  .modal-btn {
-    @apply flex items-center justify-between mb-4;
-  }
+  
 }
